@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input } from '../Utils/Utils'
-import TokenService from '../../services/token-service'
-import AuthApiService from '../../services/auth-api-service'
+// import TokenService from '../../services/token-service'
+// import AuthApiService from '../../services/auth-api-service'
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -17,9 +17,9 @@ export default class LoginForm extends Component {
     // console.log('login form submitted')
     // console.log({ user_name, password })
 
-    TokenService.saveAuthToken(
-      TokenService.makeBasicAuthToken(user_name.value, password.value)
-    )
+    // TokenService.saveAuthToken(
+    //   TokenService.makeBasicAuthToken(user_name.value, password.value)
+    // )
 
     user_name.value = ''
     password.value = ''
@@ -31,14 +31,14 @@ export default class LoginForm extends Component {
     this.setState({ error: null })
     const { user_name, password } = ev.target
 
-    AuthApiService.postLogin({
-      user_name: user_name.value,
-      password: password.value,
-    })
+      // AuthApiService.postLogin({
+      //   user_name: user_name.value,
+      //   password: password.value,
+      // })
       .then(res => {
         user_name.value = ''
         password.value = ''
-        TokenService.saveAuthToken(res.authToken)
+        // TokenService.saveAuthToken(res.authToken)
         this.props.onLoginSuccess()
       })
       .catch(res => {
@@ -79,6 +79,10 @@ export default class LoginForm extends Component {
         </div>
         <Button type='submit'>
           Login
+        </Button>
+        <h4> Register for an account </h4>
+        <Button type='submit'>
+          Register
         </Button>
       </form>
     )
