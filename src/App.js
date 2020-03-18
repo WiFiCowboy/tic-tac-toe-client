@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import GameBoard from './compenents/GameBoard'
 
 
 
-function App() {
-  return (
-    <div className="App">
-      <GameBoard />
-    </div>
-  );
+class App extends Component {
+
+  render() {
+    return (
+      <div className="App">
+        <GameBoard />
+      </div>
+    )
+  }
 }
 
 export default App;
