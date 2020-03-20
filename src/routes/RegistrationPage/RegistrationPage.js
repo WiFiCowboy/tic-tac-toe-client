@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Section } from '../../components/Utils/Utils'
-import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import { Section } from '../../Utils/Utils'
+import RegistrationForm from '../../RegistrationForm/RegistrationForm'
 
 export default class RegistrationPage extends Component {
   static defaultProps = {
     history: {
-      push: () => {},
+      push: () => { },
     },
   }
 

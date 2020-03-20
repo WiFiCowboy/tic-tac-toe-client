@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
-import AuthApiService from '../../services/auth-api-service'
+// import AuthApiService from '../../services/auth-api-service'
 
 export default class RegistrationForm extends Component {
   static defaultProps = {
@@ -9,30 +9,30 @@ export default class RegistrationForm extends Component {
 
   state = { error: null }
 
-  handleSubmit = ev => {
-    ev.preventDefault()
-    const { full_name, nick_name, user_name, password } = ev.target
+  // handleSubmit = ev => {
+  //   ev.preventDefault()
+  //   const { full_name, nick_name, user_name, password } = ev.target
 
-    this.setState({ error: null })
-    AuthApiService.postUser({
-      user_name: user_name.value,
-      password: password.value,
-      full_name: full_name.value,
-      nickname: nick_name.value,
-    })
-      .then(user => {
-        full_name.value = ''
-        nick_name.value = ''
-        user_name.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
+  //   this.setState({ error: null })
+  //   AuthApiService.postUser({
+  //     user_name: user_name.value,
+  //     password: password.value,
+  //     full_name: full_name.value,
+  //     nickname: nick_name.value,
+  //   })
+  //     .then(user => {
+  //       full_name.value = ''
+  //       nick_name.value = ''
+  //       user_name.value = ''
+  //       password.value = ''
+  //       this.props.onRegistrationSuccess()
 
 
-      })
-      .catch(res => {
-        this.setState({ error: res.error })
-      })
-  }
+  //     })
+  //     .catch(res => {
+  //       this.setState({ error: res.error })
+  //     })
+  // }
   render() {
     const { error } = this.state
     return (
@@ -76,19 +76,8 @@ export default class RegistrationForm extends Component {
             id='RegistrationForm__password'>
           </Input>
         </div>
-        <div className='nick_name'>
-          <label htmlFor='RegistrationForm__nick_name'>
-            Nickname
-          </label>
-          <Input
-            name='nick_name'
-            type='text'
-            required
-            id='RegistrationForm__nick_name'>
-          </Input>
-        </div>
         <Button type='submit'>
-          Register
+          Submit
         </Button>
       </form>
     )

@@ -3,6 +3,8 @@
   display: flex;
   align-items: normal;
   justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 .Header h1 {

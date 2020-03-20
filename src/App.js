@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
-import GameBoard from './GameBoard/GameBoard'
+import Game from './GameBoard/Game'
 import Header from './Header/Header'
 import LoginPage from './routes/LoginPage/LoginPage'
 import LoggedIn from './LoggedIn/LoggedInPage'
+import RegistrationPage from './routes/RegistrationPage/RegistrationPage'
+import LeaderBoard from './LeaderBoard/LeaderBoard'
 
 
 
@@ -30,8 +32,20 @@ class App extends Component {
               component={LoginPage}
             />
             <Route
-              path={'/LoggedIn'}
+              path={'/loggedin'}
               component={LoggedIn}
+            />
+            <Route
+              path={'/register'}
+              component={RegistrationPage}
+            />
+            <Route
+              path={'/game'}
+              component={Game}
+            />
+            <Route
+              path={'/leaderboard'}
+              component={LeaderBoard}
             />
           </Switch>
         </main>
