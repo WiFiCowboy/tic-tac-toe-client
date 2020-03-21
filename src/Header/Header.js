@@ -1,21 +1,50 @@
 import React, { Component } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import TokenService from '../services/token-service'
+import { Link } from 'react-router-dom'
+// import TokenService from '../services/token-service'
 import './Header.css'
+import Context from '../Context/Context'
 
 export default class Header extends Component {
-  state = { registered: false }
+  static contextType = Context
+  state = {
+    registered: false,
+    logout: false
+  }
 
-  handleLogoutClick = () => {
-    TokenService.clearAuthToken()
+  // handleLogoutClick = () => {
+  //   TokenService.clearAuthToken()
+  // }
+
+  renderHeaderButtons() {
+    if (!this.context.username) {
+      return this.renderLoginLink()
+    } else {
+      return this.renderBackLink()
+    }
   }
 
   handleRegister = () => {
-    if (this.state.registered === false) {
-      this.setState = { registered: true }
-    } else {
-      this.setState = { registered: false }
-    }
+    this.setState({
+      registered: true
+    })
+  }
+
+  handleBackButton = () => {
+    this.setState({
+      registered: false
+    })
+  }
+
+  renderBackLink() {
+    return (
+      <div className='Header__logged-in'>
+        <Link
+          onClick={this.handleBackButton}
+          to='/'>
+          Back
+        </Link>
+      </div>
+    )
   }
 
   renderLogoutLink() {
@@ -43,6 +72,8 @@ export default class Header extends Component {
   }
 
   render() {
+    console.log(this.context);
+
     // let { id } = useParams();
     // console.log(id);
     return <>
@@ -50,10 +81,10 @@ export default class Header extends Component {
         <h1>
           Tic-Tac-Toe Championship Edition
         </h1>
-        {/* {this.renderButtons(id)} */}
-        {TokenService.hasAuthToken()
+        {/* {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
-          : this.renderLoginLink()}
+          : this.renderLoginLink()} */}
+        {this.renderHeaderButtons()}
       </nav>
     </>
   }

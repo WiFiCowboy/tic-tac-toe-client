@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Input } from '../Utils/Utils'
+import Context from '../Context/Context'
 // import TokenService from '../../services/token-service'
 // import AuthApiService from '../../services/auth-api-service'
 
 export default class LoginForm extends Component {
+  static contextType = Context
   static defaultProps = {
     onLoginSuccess: () => { }
   }
@@ -31,23 +33,28 @@ export default class LoginForm extends Component {
     ev.preventDefault()
     this.setState({ error: null })
     const { user_name, password } = ev.target
+    console.log(user_name.value);
+    this.props.onLoginSuccess()
 
-      // AuthApiService.postLogin({
-      //   user_name: user_name.value,
-      //   password: password.value,
-      // })
-      .then(res => {
-        user_name.value = ''
-        password.value = ''
-        // TokenService.saveAuthToken(res.authToken)
-        this.props.onLoginSuccess()
-      })
-      .catch(res => {
-        this.setState({ error: res.error })
-      })
+    this.context.setusername(user_name.value)
+    // AuthApiService.postLogin({
+    //   user_name: user_name.value,
+    //   password: password.value,
+    // })
+    // .then(res => {
+    //   user_name.value = ''
+    //   password.value = ''
+    //   // TokenService.saveAuthToken(res.authToken)
+    //   this.props.onLoginSuccess()
+    // })
+    // .catch(res => {
+    //   this.setState({ error: res.error })
+    // })
   }
 
   render() {
+    console.log(this.context);
+
     const { error } = this.state
     return (
       <form
@@ -79,14 +86,18 @@ export default class LoginForm extends Component {
           </Input>
         </div>
         <div className='Header__not-logged-in'>
-          <Link
+          {/* <Link
+          to='/login'>
+          Log in
+        </Link> */}
+          {/* <Link
             to='/loggedin'>
             Login
-          </Link>
+        </Link> */}
         </div>
-        {/* <Button type='submit'>
+        <Button type='submit'>
           Login
-        </Button> */}
+        </Button>
         {/* <h4> Register for an account </h4>
         <Button type='submit'>
           Register

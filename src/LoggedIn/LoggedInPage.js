@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { Button } from '../Utils/Utils'
 
 class LoggedIn extends Component {
