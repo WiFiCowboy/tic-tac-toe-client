@@ -14,7 +14,9 @@ class App extends Component {
 
   state = {
     hasError: false,
-    username: false
+    username: false,
+    registered: false,
+
   }
 
   static getDerivedStateFromError(error) {

@@ -11,13 +11,19 @@ export default class Header extends Component {
     logout: false
   }
 
+  handleLogoutClick = () => {
+    this.context.setusername()
+  }
+
   // handleLogoutClick = () => {
   //   TokenService.clearAuthToken()
   // }
 
   renderHeaderButtons() {
-    if (!this.context.username) {
+    if (!this.context.username && !this.state.registered) {
       return this.renderLoginLink()
+    } else if (this.context.username) {
+      return this.renderLogoutLink()
     } else {
       return this.renderBackLink()
     }
@@ -25,7 +31,7 @@ export default class Header extends Component {
 
   handleRegister = () => {
     this.setState({
-      registered: true
+      registered: !this.state.registered
     })
   }
 
@@ -33,6 +39,16 @@ export default class Header extends Component {
     this.setState({
       registered: false
     })
+  }
+
+  renderLeaderBoardLink() {
+    return (
+      <div className='leaderBoard'>
+        <Link to='/leaderboard' >
+          Leaderboard
+        </Link>
+      </div>
+    )
   }
 
   renderBackLink() {
@@ -74,8 +90,6 @@ export default class Header extends Component {
   render() {
     console.log(this.context);
 
-    // let { id } = useParams();
-    // console.log(id);
     return <>
       <nav className='Header'>
         <h1>
@@ -84,6 +98,7 @@ export default class Header extends Component {
         {/* {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()} */}
+        {this.renderLeaderBoardLink()}
         {this.renderHeaderButtons()}
       </nav>
     </>
