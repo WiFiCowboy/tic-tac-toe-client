@@ -11,7 +11,8 @@ export default class RegistrationPage extends Component {
 
   handleRegistrationSuccess = user => {
     const { history } = this.props
-    history.push('/login')
+    // this redirects to landing page
+    history.push('/')
   }
 
   render() {

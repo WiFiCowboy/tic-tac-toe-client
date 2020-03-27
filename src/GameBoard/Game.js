@@ -36,6 +36,17 @@ class Game extends React.Component {
     return null;
   }
 
+  // saveGame() {
+  //   fetch('http://localhost:8000/api/users/game', {
+  //     method: 'post',
+  //     headers: { authorization: `bearer ${tokenservice.getAuthToken}` }
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => this.setState({
+  //       data
+  //     }))
+  // }
+
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];

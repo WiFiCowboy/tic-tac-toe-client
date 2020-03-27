@@ -23,7 +23,7 @@
 
 .Header__tagline--narrow {
   opacity: 0.35;
-  display: block;
+  display: inline-block;
   text-align: center;
   display: none;
   margin-top: 10px;
@@ -52,9 +52,11 @@
 
 .leaderBoard a {
   border: 1px solid rgba(31, 114, 31, 0.94);
+  background-color: rgba(31, 114, 31, 0.94);
+  color: black;
   padding: 5px 15px;
   border-radius: 15px;
-  margin-right: 10px;
+  margin-left: 20px;
 }
 
 @media screen and (min-width: 450px) {
