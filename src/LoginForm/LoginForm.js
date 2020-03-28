@@ -33,7 +33,7 @@ export default class LoginForm extends Component {
     this.setState({ error: null })
     const { user_name, password } = ev.target
     console.log(user_name.value);
-    // this.props.onLoginSuccess()
+
 
     this.context.setusername(user_name.value)
     AuthApiService.postLogin({

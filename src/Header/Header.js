@@ -1,61 +1,75 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import TokenService from '../services/token-service'
+import TokenService from '../services/token-service'
 import './Header.css'
 import Context from '../Context/Context'
 
 export default class Header extends Component {
   static contextType = Context
   state = {
+    leaderboard: true,
     registered: false,
-    logout: false
   }
 
   handleLogoutClick = () => {
     this.context.setusername()
+    TokenService.clearAuthToken()
   }
 
-  // handleLogoutClick = () => {
-  //   TokenService.clearAuthToken()
-  // }
-
-  renderHeaderButtons() {
-    if (!this.context.username && !this.state.registered) {
-      return this.renderLoginLink()
-    } else if (this.context.username) {
-      return this.renderLogoutLink()
-    } else {
-      return this.renderBackLink()
-    }
+  handleLeaderboardClick = () => {
+    this.setState({
+      leaderboard: !this.state.leaderboard
+    })
   }
 
-  handleRegister = () => {
+  handleRegisterClick = () => {
     this.setState({
       registered: !this.state.registered
     })
   }
 
-  handleBackButton = () => {
-    this.setState({
-      registered: false
-    })
+  handleLeaderBoardButtons() {
+    if (this.state.leaderboard) {
+      return this.renderLeaderBoardLink()
+    } else {
+      return this.renderLeaderBoardBackLink()
+    }
+  }
+
+  renderHeaderButtons() {
+    console.log(this.context);
+    if (!this.context.username) {
+      return this.renderRegisterButtons()
+    } else {
+      return this.renderLogoutLink()
+    }
+  }
+
+  renderRegisterButtons() {
+    if (!this.state.registered) {
+      return this.renderRegisterLink()
+    } else {
+      return this.renderRegisterBackLink()
+    }
   }
 
   renderLeaderBoardLink() {
     return (
       <div className='leaderBoard'>
-        <Link to='/leaderboard' >
+        <Link
+          onClick={this.handleLeaderboardClick}
+          to='/leaderboard' >
           Leaderboard
         </Link>
       </div>
     )
   }
 
-  renderBackLink() {
+  renderLeaderBoardBackLink() {
     return (
       <div className='Header__logged-in'>
         <Link
-          onClick={this.handleBackButton}
+          onClick={this.handleLeaderboardClick}
           to='/'>
           Back
         </Link>
@@ -75,13 +89,25 @@ export default class Header extends Component {
     )
   }
 
-  renderLoginLink() {
+  renderRegisterLink() {
     return (
       <div className='Header__not-logged-in'>
         <Link
-          onClick={this.handleRegister}
+          onClick={this.handleRegisterClick}
           to='/register'>
           Register
+        </Link>
+      </div>
+    )
+  }
+
+  renderRegisterBackLink() {
+    return (
+      <div className='Header__logged-in'>
+        <Link
+          onClick={this.handleRegisterClick}
+          to='/'>
+          Back
         </Link>
       </div>
     )
@@ -95,10 +121,7 @@ export default class Header extends Component {
         <h1>
           Tic-Tac-Toe Championship Edition
         </h1>
-        {/* {TokenService.hasAuthToken()
-          ? this.renderLogoutLink()
-          : this.renderLoginLink()} */}
-        {this.renderLeaderBoardLink()}
+        {this.handleLeaderBoardButtons()}
         {this.renderHeaderButtons()}
       </nav>
     </>
