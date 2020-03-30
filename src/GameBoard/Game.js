@@ -1,5 +1,6 @@
 import React from 'react'
 import Board from './Board'
+import TokenService from '../services/token-service'
 import './Game.css'
 
 class Game extends React.Component {
@@ -12,7 +13,8 @@ class Game extends React.Component {
         }
       ],
       stepNumber: 0,
-      xIsNext: true
+      xIsNext: true,
+      endGame: false
     };
   }
 
@@ -36,25 +38,49 @@ class Game extends React.Component {
     return null;
   }
 
-  // saveGame() {
-  //   fetch('http://localhost:8000/api/users/game', {
-  //     method: 'post',
-  //     headers: { authorization: `bearer ${tokenservice.getAuthToken}` }
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => this.setState({
-  //       data
-  //     }))
-  // }
+  saveGame(winner) {
+    fetch('http://localhost:8000/api/users/game', {
+      body: JSON.stringify({
+        game: winner === 'X' ? true : false
+      }),
+      method: 'post',
+      headers: { Authorization: `Bearer ${TokenService.getAuthToken()}` }
+    })
+
+  }
+
+  newGame = () => {
+    this.setState({
+      history: [
+        {
+          squares: Array(9).fill(null)
+        }
+      ],
+      stepNumber: 0,
+      xIsNext: true,
+      endGame: false
+    })
+  }
 
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    if (this.state.endGame === true) {
+      return;
+    }
+
     if (this.calculateWinner(squares) || squares[i]) {
       return;
     }
     squares[i] = this.state.xIsNext ? "X" : "O";
+    const winner = this.calculateWinner(squares)
+    if (winner) {
+      this.saveGame(winner)
+      this.setState({
+        endGame: true
+      })
+    }
     this.setState({
       history: history.concat([
         {
@@ -102,6 +128,9 @@ class Game extends React.Component {
           <div>{status}</div>
           <ol>{moves}</ol>
         </div>
+        {this.state.endGame ? (
+          <button onClick={this.newGame}>new game</button>
+        ) : ''}
       </div>
     );
   }

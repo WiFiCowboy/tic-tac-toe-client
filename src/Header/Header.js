@@ -32,7 +32,12 @@ export default class Header extends Component {
     if (this.state.leaderboard) {
       return this.renderLeaderBoardLink()
     } else {
-      return this.renderLeaderBoardBackLink()
+      if (this.context.username) {
+        return this.renderLeaderBoardStartGame()
+      } else {
+        return this.renderLeaderBoardBackLink()
+      }
+
     }
   }
 
@@ -77,6 +82,18 @@ export default class Header extends Component {
     )
   }
 
+  renderLeaderBoardStartGame() {
+    return (
+      <div className='Header__logged-in'>
+        <Link
+          onClick={this.handleLeaderboardClick}
+          to='/game'>
+          start game
+        </Link>
+      </div>
+    )
+  }
+
   renderLogoutLink() {
     return (
       <div className='Header__logged-in'>
@@ -100,6 +117,7 @@ export default class Header extends Component {
       </div>
     )
   }
+
 
   renderRegisterBackLink() {
     return (
