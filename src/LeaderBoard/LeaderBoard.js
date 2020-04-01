@@ -17,7 +17,7 @@ export default class LeaderBoard extends Component {
       <div>
         <ol>
           {this.state.data.map(user => (
-            <li key={user.id}>{user.user_name}<span>Games Won: {user.number_wins}</span></li>
+            <li key={user.id}>{user.user_name} <span>Games Played: {user.number_games}</span> <span> Games Won: {user.number_wins}</span></li>
           ))}
           <li>Fylnn <span>Games Won: 9000</span></li>
         </ol>

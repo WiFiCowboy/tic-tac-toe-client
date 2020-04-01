@@ -37,7 +37,6 @@ export default class Header extends Component {
       } else {
         return this.renderLeaderBoardBackLink()
       }
-
     }
   }
 
@@ -88,7 +87,7 @@ export default class Header extends Component {
         <Link
           onClick={this.handleLeaderboardClick}
           to='/game'>
-          start game
+          Game
         </Link>
       </div>
     )

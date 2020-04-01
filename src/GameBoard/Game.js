@@ -46,7 +46,6 @@ class Game extends React.Component {
       method: 'post',
       headers: { Authorization: `Bearer ${TokenService.getAuthToken()}` }
     })
-
   }
 
   newGame = () => {
