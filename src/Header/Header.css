@@ -1,14 +1,22 @@
 .Header {
-  height: 40px;
+  height: 100px;
   display: flex;
+  flex-direction: column;
   align-items: normal;
   justify-content: space-between;
   margin-bottom: 20px;
   padding-bottom: 50px;
+  font-size: 13px;
 }
 
-.Header h1 {
-  margin: 0;
+.title {
+  text-align: center;
+  padding: 10px;
+}
+
+.button-box{
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .Header a {
@@ -30,28 +38,28 @@
 }
 
 .Header__not-logged-in {
-  display: flex;
-  flex: 1;
   align-items: center;
   justify-content: flex-end;
+  margin-left: 20px;
 }
 
 .Header__not-logged-in a:last-child {
-  background: rgb(255, 121, 121);
-  color: white;
+  background-color: rgba(31, 114, 31, 0.94);
+  color: black;
   padding: 5px 15px;
   border-radius: 15px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .Header__logged-in a {
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(31, 114, 31, 0.94);
+  color: black;
   padding: 5px 15px;
   border-radius: 15px;
+  margin-left: 20px;
 }
 
 .leaderBoard a {
-  border: 1px solid rgba(31, 114, 31, 0.94);
   background-color: rgba(31, 114, 31, 0.94);
   color: black;
   padding: 5px 15px;

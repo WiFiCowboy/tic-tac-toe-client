@@ -135,11 +135,15 @@ export default class Header extends Component {
 
     return <>
       <nav className='Header'>
-        <h1>
-          Tic-Tac-Toe Championship Edition
-        </h1>
-        {this.handleLeaderBoardButtons()}
-        {this.renderHeaderButtons()}
+        <div className='title'>
+          <h1>
+            Tic-Tac-Toe Championship Edition
+          </h1>
+        </div>
+        <div className="button-box">
+          {this.handleLeaderBoardButtons()}
+          {this.renderHeaderButtons()}
+        </div>
       </nav>
     </>
   }

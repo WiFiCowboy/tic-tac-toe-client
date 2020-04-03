@@ -3,6 +3,7 @@ import { Button, Input } from '../Utils/Utils'
 import Context from '../Context/Context'
 import TokenService from '../services/token-service'
 import AuthApiService from '../services/auth-api-service'
+import './LoginForm.css'
 
 export default class LoginForm extends Component {
   static contextType = Context
