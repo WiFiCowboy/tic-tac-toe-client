@@ -2,7 +2,7 @@ import React from 'react'
 import Board from './Board'
 import TokenService from '../services/token-service'
 import './Game.css'
-import Square from './Square';
+import { Button } from '../Utils/Utils'
 
 const lines = [
   [0, 1, 2],
@@ -194,13 +194,12 @@ class Game extends React.Component {
       <div className="game">
         <div className="game-info">
           <div>{status}</div>
-          {/* <ol>{moves}</ol> */}
         </div>
         <div className="game-board">
           <Board squares={current.squares} onClick={i => this.handleClick(i)} />
         </div>
         {this.state.endGame ? (
-          <button className="new-game-btn" onClick={this.newGame}>new game</button>
+          <Button className="new-game-btn" onClick={this.newGame}>new game</Button>
         ) : ''}
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './LeaderBoard.css'
 
 export default class LeaderBoard extends Component {
   state = {
@@ -14,12 +15,12 @@ export default class LeaderBoard extends Component {
   }
   render() {
     return (
-      <div>
-        <ol>
+      <div className='leaderBoard'>
+        <h2 className='high-score'>HIGH SCORES</h2>
+        <ol className='score-list'>
           {this.state.data.map(user => (
-            <li key={user.id}>{user.user_name} <span>Games Played: {user.number_games}</span> <span> Games Won: {user.number_wins}</span></li>
+            <li key={user.id}><span>{user.user_name} </span> <span>{user.number_wins}</span></li>
           ))}
-          <li>Fylnn <span>Games Won: 9000</span></li>
         </ol>
       </div>
     )

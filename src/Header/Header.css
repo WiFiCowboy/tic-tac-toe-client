@@ -20,7 +20,6 @@
 }
 
 .Header a {
-  color: #444;
   text-decoration: none;
 }
 
@@ -41,27 +40,31 @@
   align-items: center;
   justify-content: flex-end;
   margin-left: 20px;
+  text-decoration: none;
 }
 
 .Header__not-logged-in a:last-child {
-  background-color: rgba(31, 114, 31, 0.94);
-  color: black;
+  background-color: black;
+  color: white;
+  text-shadow: 0 0 5px #C8C8C8;
   padding: 5px 15px;
   border-radius: 15px;
   margin-left: 20px;
 }
 
 .Header__logged-in a {
-  background-color: rgba(31, 114, 31, 0.94);
-  color: black;
+  background-color: black;
+  color: white;
+  text-shadow: 0 0 5px #C8C8C8;
   padding: 5px 15px;
   border-radius: 15px;
   margin-left: 20px;
 }
 
 .leaderBoard a {
-  background-color: rgba(31, 114, 31, 0.94);
-  color: black;
+  background-color: black;
+  color: white;
+  text-shadow: 0 0 5px #C8C8C8;
   padding: 5px 15px;
   border-radius: 15px;
   margin-left: 20px;
