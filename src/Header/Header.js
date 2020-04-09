@@ -41,7 +41,7 @@ export default class Header extends Component {
   }
 
   renderHeaderButtons() {
-    console.log(this.context);
+
     if (!this.context.username) {
       return this.renderRegisterButtons()
     } else {
@@ -131,7 +131,7 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log(this.context);
+
 
     return <>
       <nav className='Header'>

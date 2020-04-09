@@ -1,6 +1,7 @@
 import React from 'react'
 import Board from './Board'
 import TokenService from '../services/token-service'
+import config from '../config'
 import './Game.css'
 import { Button } from '../Utils/Utils'
 
@@ -42,7 +43,7 @@ class Game extends React.Component {
   }
 
   saveGame(winner) {
-    fetch('http://localhost:8000/api/users/game', {
+    fetch(`${config.API_ENDPOINT}/users/game`, {
       body: JSON.stringify({
         game: winner === 'X' ? true : false
       }),
@@ -157,7 +158,7 @@ class Game extends React.Component {
       })
 
     }
-    console.log(lineFound, position, freePositions);
+
 
     this.handleClick(position)
   }

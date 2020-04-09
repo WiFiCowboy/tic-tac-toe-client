@@ -13,27 +13,12 @@ export default class LoginForm extends Component {
 
   state = { error: null }
 
-  // handleSubmitBasicAuth = ev => {
-  //   ev.preventDefault()
-  //   const { user_name, password } = ev.target
-
-  //   console.log('login form submitted')
-  //   console.log({ user_name, password })
-
-  //   TokenService.saveAuthToken(
-  //     TokenService.makeBasicAuthToken(user_name.value, password.value)
-  //   )
-
-  //   user_name.value = ''
-  //   password.value = ''
-  //   this.props.onLoginSuccess()
-  // }
 
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
     this.setState({ error: null })
     const { user_name, password } = ev.target
-    console.log(user_name.value);
+
 
 
     this.context.setusername(user_name.value)
@@ -53,7 +38,7 @@ export default class LoginForm extends Component {
   }
 
   render() {
-    console.log(this.context);
+
 
     const { error } = this.state
     return (

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import config from '../config'
 import './LeaderBoard.css'
 
 export default class LeaderBoard extends Component {
@@ -7,7 +8,7 @@ export default class LeaderBoard extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/api/users/leaderboard')
+    fetch(`${config.API_ENDPOINT}/users/leaderboard`)
       .then(res => res.json())
       .then(data => this.setState({
         data
