@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: flex-end;
   margin-left: 20px;
-  text-decoration: none;
+  
 }
 
 .Header__not-logged-in a:last-child {
