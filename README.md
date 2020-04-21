@@ -8,16 +8,17 @@
 ### Summary
 A Tic-Tac-Toe game where a user, creates a username and plays a game. The game displays the winner of the game. The game will display the top 10 usernames and highscores. 
 
-#### Technology
-* Front-end
+#### Technology Stack
   * HTML
   * CSS 
+  * JavaScript
   * React
   * enzyme 
+  * Redux
 
 * Development Environment
   * Git
   * GitHub 
-  * Slack
+  * Postman
   * Visual Studio Code
   * GitHub Projects
