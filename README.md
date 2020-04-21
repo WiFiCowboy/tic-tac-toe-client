@@ -2,7 +2,9 @@
 ## Live App link
 * https://tic-tac-toe-three.now.sh/
 ## App Images
-![main screen](assets/Login.png "main Page")![game screen](assets/Game.png "comics page")![highscore screen](assets/HighScore.png "highscore page")
+![main screen](assets/Login.png "main Page")
+![game screen](assets/Game.png "comics page")
+![highscore screen](assets/HighScore.png "highscore page")
 
 
 ### Summary
