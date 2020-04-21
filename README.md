@@ -23,6 +23,7 @@ A Tic-Tac-Toe game where a user, creates a username and plays a game. The game d
   * enzyme 
   * Redux
 
+<<<<<<< HEAD
 ### Back End
   * Node.js
   * Express
@@ -34,6 +35,9 @@ A Tic-Tac-Toe game where a user, creates a username and plays a game. The game d
   * JWT Authentication
 
 ### Development Environment
+=======
+#### Development Environment
+>>>>>>> 89514f2c2f2bc20aea5fd6fc93f3e726d7b2491d
   * Git
   * GitHub 
   * Postman
