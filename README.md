@@ -18,7 +18,7 @@ A Tic-Tac-Toe game where a user, creates a username and plays a game. The game d
   * enzyme 
   * Redux
 
-* Development Environment
+#### Development Environment
   * Git
   * GitHub 
   * Postman
