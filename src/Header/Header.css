@@ -1,5 +1,6 @@
 .Header {
-  height: 100px;
+  /* height: 100px; */
+ 
   display: flex;
   flex-direction: column;
   align-items: normal;
@@ -15,6 +16,7 @@
 }
 
 .button-box{
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -39,7 +41,8 @@
 .Header__not-logged-in {
   align-items: center;
   justify-content: flex-end;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+  margin-top: 4px;
   
 }
 
@@ -49,7 +52,7 @@
   text-shadow: 0 0 5px #C8C8C8;
   padding: 5px 15px;
   border-radius: 15px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .Header__logged-in a {
@@ -58,7 +61,8 @@
   text-shadow: 0 0 5px #C8C8C8;
   padding: 5px 15px;
   border-radius: 15px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
+ 
 }
 
 .leaderBoard a {
@@ -67,7 +71,7 @@
   text-shadow: 0 0 5px #C8C8C8;
   padding: 5px 15px;
   border-radius: 15px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 @media screen and (min-width: 450px) {
