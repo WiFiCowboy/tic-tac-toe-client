@@ -2,9 +2,30 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { Button } from '../Utils/Utils'
 import Context from "../Context/Context";
+import bgSound from "../Sound/bgMusic.wav";
 
 class LoggedIn extends Component {
   static contextType = Context;
+
+  componentDidMount() {
+    this.audio = new Audio(bgSound);
+    this.audio.load();
+    this.playAudio();
+  }
+
+  playAudio() {
+    const audioPromise = this.audio.play();
+    if (audioPromise !== undefined) {
+      audioPromise
+        .then((_) => {
+          // autoplay started
+        })
+        .catch((err) => {
+          // catch dom exception
+          console.info(err);
+        });
+    }
+  }
 
   render() {
     return (

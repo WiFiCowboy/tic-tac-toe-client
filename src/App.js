@@ -7,7 +7,6 @@ import LoggedIn from "./LoggedIn/LoggedInPage";
 import RegistrationPage from "./routes/RegistrationPage/RegistrationPage";
 import LeaderBoard from "./LeaderBoard/LeaderBoard";
 import Context from "./Context/Context";
-import bgSound from "../src/Sound/bgMusic.wav";
 
 class App extends Component {
   state = {
@@ -25,26 +24,6 @@ class App extends Component {
       username: username,
     });
   };
-
-  componentDidMount() {
-    this.audio = new Audio(bgSound);
-    this.audio.load();
-    this.playAudio();
-  }
-
-  playAudio() {
-    const audioPromise = this.audio.play();
-    if (audioPromise !== undefined) {
-      audioPromise
-        .then((_) => {
-          // autoplay started
-        })
-        .catch((err) => {
-          // catch dom exception
-          console.info(err);
-        });
-    }
-  }
 
   render() {
     return (
