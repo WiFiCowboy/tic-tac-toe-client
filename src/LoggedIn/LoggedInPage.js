@@ -15,9 +15,10 @@ class LoggedIn extends Component {
             <span>{this.context.user_name}</span>
           </h3>
           <p>
-            Welcome to Tic-Tac-Toe Championship Edition, Be the first player to
-            connect your mark X or O in a row, rows can be vertical horizontal
-            or diagonal, when all 9 squares are full the game is over.
+            Welcome Back to Tic-Tac-Toe Championship Edition! Beat the Computer
+            by being the first to connect your mark (X) in a row, rows can be
+            vertical, horizontal or diagonal, when a player connects 3 in a row
+            or all 9 squares are full the game is over.
           </p>
           <div className="Header__not-logged-in">
             <Link to="/game">Start Game</Link>

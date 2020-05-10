@@ -1,6 +1,6 @@
 .Header {
   /* height: 100px; */
- 
+
   display: flex;
   flex-direction: column;
   align-items: normal;
@@ -15,7 +15,7 @@
   padding: 10px;
 }
 
-.button-box{
+.button-box {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -42,14 +42,13 @@
   align-items: center;
   justify-content: flex-end;
   /* margin-left: 20px; */
-  margin-top: 4px;
-  
+  /* margin-top: 4px; */
 }
 
 .Header__not-logged-in a:last-child {
   background-color: black;
   color: white;
-  text-shadow: 0 0 5px #C8C8C8;
+  text-shadow: 0 0 5px #c8c8c8;
   padding: 5px 15px;
   border-radius: 15px;
   /* margin-left: 20px; */
@@ -58,17 +57,16 @@
 .Header__logged-in a {
   background-color: black;
   color: white;
-  text-shadow: 0 0 5px #C8C8C8;
+  text-shadow: 0 0 5px #c8c8c8;
   padding: 5px 15px;
   border-radius: 15px;
   /* margin-left: 20px; */
- 
 }
 
 .leaderBoard a {
   background-color: black;
   color: white;
-  text-shadow: 0 0 5px #C8C8C8;
+  text-shadow: 0 0 5px #c8c8c8;
   padding: 5px 15px;
   border-radius: 15px;
   /* margin-left: 20px; */

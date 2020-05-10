@@ -3,7 +3,8 @@ body {
   margin: 20px;
 }
 
-ol, ul {
+ol,
+ul {
   padding-left: 30px;
 }
 
@@ -19,9 +20,9 @@ ol, ul {
 
 .square {
   background: black;
-  border: 2px solid rgba(49, 130, 49, 0.824);
-  text-shadow: 0 0 5px rgb(18, 96, 18);
-  color: rgba(49, 130, 49, 0.824);
+  border: 2px solid rgba(11, 240, 11, 0.824);
+  text-shadow: 0 0 5px rgb(15, 199, 15);
+  color: rgba(46, 225, 46, 0.824);
   float: left;
   font-size: 30px;
   font-weight: bold;
