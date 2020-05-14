@@ -4,7 +4,6 @@ import Context from "../Context/Context";
 import TokenService from "../services/token-service";
 import AuthApiService from "../services/auth-api-service";
 import "./LoginForm.css";
-import Greeting from "../Greeting/Greeting";
 
 export default class LoginForm extends Component {
   static contextType = Context;

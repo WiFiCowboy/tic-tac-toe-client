@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import PrivateRoute from "./Utils/PrivateRoute";
 import Game from "./GameBoard/Game";
 import Header from "./Header/Header";
 import LoginPage from "./routes/LoginPage/LoginPage";
 import LoggedIn from "./LoggedIn/LoggedInPage";
 import RegistrationPage from "./routes/RegistrationPage/RegistrationPage";
 import LeaderBoard from "./LeaderBoard/LeaderBoard";
+import NotFound from "./NotFound/NotFound";
 import Context from "./Context/Context";
 
 class App extends Component {
@@ -40,10 +42,11 @@ class App extends Component {
             )}
             <Switch>
               <Route exact path={"/"} component={LoginPage} />
-              <Route path={"/loggedin"} component={LoggedIn} />
+              <PrivateRoute path={"/loggedin"} component={LoggedIn} />
               <Route path={"/register"} component={RegistrationPage} />
-              <Route path={"/game"} component={Game} />
+              <PrivateRoute path={"/game"} component={Game} />
               <Route path={"/leaderboard"} component={LeaderBoard} />
+              <Route component={NotFound} />
             </Switch>
           </main>
         </div>
